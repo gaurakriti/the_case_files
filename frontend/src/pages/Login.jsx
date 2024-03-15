@@ -18,6 +18,8 @@ const Login = () => {
         const res=await axios.post(URL+"/api/auth/login",{email,password},{withCredentials:true})
         // console.log(res.data)
         setUser(res.data)
+        setEmail("");
+        setPassword("");
         navigate("/")
   
       }
@@ -34,7 +36,7 @@ const Login = () => {
             {/* Navbar */}
             <nav className="bg-black shadow-md" id = "login">
                 <div className="container mx-auto flex justify-between items-center py-4">
-                    <h1 className="text-2xl font-bold text-white">THE CASE FILES.com</h1>
+                <Link to="/"> <h1 className="text-2xl font-bold text-white">THE CASE FILES.com</h1></Link>
                     <div>
                         <ul className="flex space-x-4">
                             <li><Link to="/" className="text-white">Home</Link></li>
@@ -60,6 +62,9 @@ const Login = () => {
                         <button onClick={handleLogin} className="w-full px-4 py-4 text-lg font-bold text-white bg-black rounded-lg hover:bg-gray-500 hover:text-black ">Log in</button>
                         {error && <h3 className="text-red-500 text-sm ">Something went wrong</h3>}
                         </div>
+                        <p>
+                   Don't have an account? <Link to="/register">Register</Link>
+                       </p>
                     </div>
                 </div>
             </div>

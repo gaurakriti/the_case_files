@@ -92,7 +92,10 @@ const Register = () => {
       setEmail(res.data.email)
       setPassword(res.data.password)
       setError(false)
-      navigate("/")
+      setUsername("");
+      setEmail("");
+      setPassword("");
+      navigate("/login")
       
     }
     catch(err){
@@ -107,7 +110,7 @@ const Register = () => {
   return (
     <div className="bg-gray-100">
       {/* Navbar */}
-      <nav className="bg-white p-4">
+      <nav className="bg-black text-white p-4">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold">THE CASE FILES.com</h1>
           <div>

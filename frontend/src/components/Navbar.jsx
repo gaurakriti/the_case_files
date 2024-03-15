@@ -4,7 +4,7 @@ import {FaBars} from 'react-icons/fa'
 import { useContext, useState } from "react"
 import Menu from "./Menu"
 import { UserContext } from "../context/UserContext"
-
+import Logo from "../pages/Logo"
 
 
 const Navbar = () => {
@@ -29,20 +29,24 @@ const Navbar = () => {
     <div className="flex items-center justify-between px-6 md:px-[200px] py-4">
     
     {/* <h1 className="text-lg md:text-xl font-extrabold"><Link to="/">221B</Link></h1> */}
-    <nav class="bg-black text-white flex justify-between items-center p-4">
-        <Link to="/"  class="text-3xl font-bold">221B</Link>
-        <ul class="hidden md:flex md:space-x-9">
+    <nav class="bg-light text-brown flex justify-between items-center p-4 ">
+    <Link to="/" >
+  <Logo/>
+</Link>
+
+        <ul class="hidden md:flex md:space-x-9 mx-8 px-30">
             <li><a href="#">Categories</a></li>
+            
             <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#foot">Contact</a></li>
         </ul>
         <div class="md:hidden">
             <i class="fa-solid fa-bars text-xl"></i>
         </div>
     </nav>
     {path==="/" && <div className="flex justify-center items-center space-x-0">
-    <p onClick={()=>navigate(prompt?"?search="+prompt:navigate("/"))} className="cursor-pointer"><BsSearch/></p>
-    <input onChange={(e)=>setPrompt(e.target.value)} className="outline-none px-3 " placeholder="Search a post" type="text"/>
+    {/* <p onClick={()=>navigate(prompt?"?search="+prompt:navigate("/"))} className="cursor-pointer"><BsSearch/></p>
+    <input onChange={(e)=>setPrompt(e.target.value)} className="outline-none px-3 " placeholder="Search a post" type="text"/> */}
     
     </div>}
     <div className="hidden md:flex items-center justify-center space-x-2 md:space-x-4">

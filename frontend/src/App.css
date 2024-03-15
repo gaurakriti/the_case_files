@@ -24,3 +24,93 @@ footer {
     color: aliceblue;
     list-style: disc;
 }
+
+
+
+
+
+
+
+
+/* Define CSS variables for consistency and maintainability */
+:root {
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --color-primary: #102317; /* Dark greenish-black */
+    --color-secondary: #ffffff;
+    --color-accent: #4CAF50; /* Green for buttons */
+    --color-background: #f0f0f0;
+  }
+  
+  body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+    max-width: 2900vh;
+    width: 100%;
+  }
+  
+  .header {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .main-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-primary {
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+  }
+  
+  .button-primary:hover {
+    background-color: darken(var(--color-accent), 10%);
+  }
+  
+  .button-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+  }
+  
+  .button-secondary:hover {
+    background-color: lighten(var(--color-secondary), 5%);
+  }
+  
+  /* Responsive design adjustments */
+  @media (max-width: 768px) {
+    .main-container {
+      padding: 10px;
+    }
+  
+    .header h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  /* Full-width image styling */
+.full-width-image {
+    width:100%;
+    height:20% ;
+    margin-left: 25%;
+    display: block; /* Removes any default margin or padding */
+  }
+  
+  /* Ensure the container does not have padding or margin that might affect the full width */
+  .main-container, .header {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  

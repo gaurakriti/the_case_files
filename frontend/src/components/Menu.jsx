@@ -15,7 +15,7 @@ const handleLogout=async()=>{
     const res=await axios.get(URL+"/api/auth/logout",{withCredentials:true})
     // console.log(res)
     setUser(null)
-    navigate("/login")
+    navigate("/")
 
   }
   catch(err){
