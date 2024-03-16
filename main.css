@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+footer {
+    background-color: rgb(69, 67, 67) !important;
+}
+#footer-logo h1 {
+    text-align: left;
+    color: beige;
+    font-size: 26px;
+    font-weight: bold;
+}
+#footer-logo p {
+    text-align: left;
+    color: beige;
+    font-size: 18px;
+    font-weight: 400;
+}
+#footer-li ul li{
+    width: auto;
+    position: relative;
+    display: inline-block;
+    text-align: right;
+    color: aliceblue;
+    list-style: disc;
+}
