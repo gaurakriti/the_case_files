@@ -67,7 +67,8 @@ router.get("/",async (req,res)=>{
     
     try{
         const searchFilter={
-            title:{$regex:query.search, $options:"i"}
+            title:{$regex:query.search, $options:"i"},
+            categories:{$regex:query.search,$options:"i"}
         }
         const posts=await Post.find(query.search?searchFilter:null)
         res.status(200).json(posts)
@@ -76,6 +77,33 @@ router.get("/",async (req,res)=>{
         res.status(500).json(err)
     }
 })
+
+//GET POSTS
+// router.get("/", async (req, res) => {
+//     const query = req.query;
+
+//     try {
+//         // Initialize an empty search filter
+//         let searchFilter = {};
+
+//         // If a search query is provided, search by title
+//         if (query.search) {
+//             searchFilter.title = { $regex: query.search, $options: "i" };
+//         }
+
+//         // If a category query is provided, add category to the search filter
+//         // This assumes that 'category' is passed as a query parameter
+//         if (query.categories) {
+//             searchFilter.categories = { $in: [query.categories] };
+//         }
+
+//         const posts = await Post.find(searchFilter);
+//         res.status(200).json(posts);
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
+
 
 //GET USER POSTS
 router.get("/user/:userId",async (req,res)=>{

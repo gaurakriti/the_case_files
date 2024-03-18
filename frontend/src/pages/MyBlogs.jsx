@@ -7,7 +7,7 @@ import axios from "axios"
 import { URL } from "../url"
 import HomePosts from "../components/HomePosts"
 import Loader from "../components/Loader"
-
+import "../App.css"
 
 const MyBlogs = () => {
     const {search}=useLocation()

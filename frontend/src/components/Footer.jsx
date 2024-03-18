@@ -1,12 +1,39 @@
-import React from "react"
+// import React from "react"
+
+// const Footer = () => {
+//   return (
+//     <div class="bg-[#101517] h-[200px] flex items-center my-16"  >
+//     <div class="h-[20px] flex space-x-4  ">
+//         <h3 class=" ">FOLLOW</h3>
+//         <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+//         <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+//         <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+//     </div>
+    
+// <h1 class="  text-white lg:text-9xl px-3 pb-8 text-5xl xl:mx-auto">THE CASE FILES</h1>
+// </div>
+    
+//   )
+// }
+
+// export default Footer
+
+import React from "react";
+import "../App.css"; // Assuming you have a CSS file for styles
 
 const Footer = () => {
   return (
-    <footer class="bg-black text-white text-center py-4" id ="foot">
-    <p id = "foot">© 2024 The Case Study Blog</p>
-</footer>
-    
-  )
-}
+    <footer className="footer">
+      <div className="socialMediaSection">
+        <h3>FOLLOW</h3>
+        <i className="fa-brands fa-facebook-f"></i>
+        <i className="fa-brands fa-twitter"></i>
+        <i className="fa-brands fa-instagram"></i>
+      </div>
 
-export default Footer
+      <h1 className="title">THE CASE FILES</h1>
+    </footer>
+  );
+};
+
+export default Footer;

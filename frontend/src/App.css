@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 footer {
@@ -23,11 +23,34 @@ footer {
     text-align: right;
     color: aliceblue;
     list-style: disc;
+} */
+
+
+.footer {
+  background-color: #101517;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  margin: 4rem 0;
 }
 
+.socialMediaSection {
+  height: 20px;
+  display: flex;
+  gap: 16px; /* space-x-4 equivalent */
+}
 
+.socialMediaSection h3,
+.socialMediaSection i {
+  color: #ffffff;
+}
 
-
+.title {
+  color: white;
+  font-size: 60px; /* text-5xl equivalent */
+  padding-left: 12px; /* px-3 equivalent */
+  padding-bottom: 32px; /* pb-8 equivalent */
+}
 
 
 
@@ -41,6 +64,7 @@ footer {
     --color-background: #f0f0f0;
   }
   
+ 
   body {
     font-family: var(--font-primary);
     background-color: var(--color-background);
@@ -113,4 +137,21 @@ footer {
     margin: 0;
     width: 100%;
   }
-  
+
+  .app-container {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+
+
+.Navbar, #foot {
+  flex-shrink: 0; /* Prevent flex items from being smaller than their content */
+}
+
+.content {
+  flex-grow: 1; /* Allow the content area to grow and fill available space */
+  overflow-y: auto; /* Enable vertical scrolling */
+  /* Adjust padding as needed */
+  padding: 20px;
+}

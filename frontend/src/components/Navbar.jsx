@@ -26,7 +26,8 @@ const Navbar = () => {
     
   return (
   
-    <div className="flex items-center justify-between px-6 md:px-[200px] py-4">
+    <div className="top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-[200px] h-16 bg-white">
+
     
     {/* <h1 className="text-lg md:text-xl font-extrabold"><Link to="/">221B</Link></h1> */}
     <nav class="bg-light text-brown flex justify-between items-center p-4 ">
@@ -36,7 +37,6 @@ const Navbar = () => {
 
         <ul class="hidden md:flex md:space-x-9 mx-8 px-30">
             <li><a href="#">Categories</a></li>
-            
             <li><a href="#">About</a></li>
             <li><a href="#foot">Contact</a></li>
         </ul>

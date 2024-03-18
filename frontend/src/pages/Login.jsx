@@ -4,7 +4,7 @@ import { useContext, useState } from "react"
 import axios from "axios"
 import { URL } from "../url"
 import { UserContext } from "../context/UserContext"
-
+import "../App.css"
 
 const Login = () => {
     const [email,setEmail]=useState("")
@@ -52,7 +52,7 @@ const Login = () => {
             <div className="container mx-auto my-8 h-[445px]">
                 <div className="flex flex-col items-center">
                     <h1 className="text-3xl font-bold">LOG IN TO THE CASE FILES.com</h1>
-                    <div className="bg-white rounded-lg shadow-md p-8 max-w-md mt-6">
+                    <div className="bg-white rounded-lg shadow-md p-9 max-w-lg mt-6 ">
                         <h2 className="text-2xl font-bold mb-4">Log in</h2>
                         <div className="grid grid-cols-1 gap-4">
                             <input type="text" placeholder="Username or Email" className="input-field" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -68,13 +68,8 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+<Footer/>
 
-            {/* Footer */}
-            <footer class="bg-gray-900 text-white py-4">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 The Case Files. All rights reserved.</p>
-        </div>
-    </footer>
         </>
     );
 };
