@@ -23,7 +23,7 @@ import "../App.css"; // Assuming you have a CSS file for styles
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" id="foot">
       <div className="socialMediaSection">
         <h3>FOLLOW</h3>
         <i className="fa-brands fa-facebook-f"></i>
