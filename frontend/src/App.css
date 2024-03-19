@@ -1,7 +1,7 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
-footer {
+/* footer {
     background-color: rgb(69, 67, 67) !important;
 }
 #footer-logo h1 {
@@ -25,7 +25,7 @@ footer {
     list-style: disc;
 } */
 
-
+/* 
 .footer {
   background-color: #101517;
   height: 200px;
@@ -38,20 +38,67 @@ footer {
   height: 20px;
   display: flex;
   gap: 16px; /* space-x-4 equivalent */
-}
+/* } */
 
 .socialMediaSection h3,
 .socialMediaSection i {
   color: #ffffff;
 }
 
+
+  .socialMediaSection {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Center the icons vertically */
+  }
+  
+
 .title {
   color: white;
-  font-size: 60px; /* text-5xl equivalent */
+  font-size: 100px; /* text-5xl equivalent */
   padding-left: 12px; /* px-3 equivalent */
   padding-bottom: 32px; /* pb-8 equivalent */
+} */
+
+/* This styles are to ensure that the footer remains at the bottom */
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
+#root { /* Assuming you're using Create React App which renders inside a div with id="root" */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.footer {
+  margin-top: auto; /* This pushes the footer to the bottom */
+  background-color: #333; /* Example background color */
+  color: white; /* Example text color */
+  text-align: center;
+  padding: 5px 0; /* Example padding */
+}
+
+.socialMediaSection h3, .socialMediaSection i {
+  margin: 0 10px; /* Example margin */
+
+}
+
+/* Adding some styles for the icons to make them look better */
+.fa-facebook-f, .fa-twitter, .fa-instagram {
+  cursor: pointer;
+  margin: 0 5px;
+  font-size: 20px;
+   /* Example size, adjust as needed */
+}
+
+/* You might need to adjust this depending on your actual HTML structure */
+body > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
 
 

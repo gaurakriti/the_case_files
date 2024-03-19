@@ -26,7 +26,7 @@ const Register = () => {
       setPassword("");
       setError(false)
      
-      navigate("/login")
+      navigate("/")
       
     }
     catch(err){

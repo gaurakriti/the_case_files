@@ -1,6 +1,7 @@
 
 import {Route, Routes} from 'react-router-dom'
 import Home from "./pages/Home"
+import AllPosts from "./pages/AllPosts"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import PostDetails from './pages/PostDetails'
@@ -9,7 +10,7 @@ import EditPost from './pages/EditPost'
 import Profile from './pages/Profile'
 import {  UserContextProvider } from './context/UserContext'
 import MyBlogs from './pages/MyBlogs'
-import Home2 from './pages/Home2'
+
 
 const App = () => {
 
@@ -19,6 +20,7 @@ const App = () => {
       <UserContextProvider>
       <Routes>
       <Route exact path="/" element={<Home/>}/>
+      <Route exact path ="/allposts" element={<AllPosts/>}/>
       {/* <Route exact path="/" element={<Home2/>}/> */}
       <Route exact path="/login" element={<Login/>}/>
       <Route exact path="/register" element={<Register/>}/>

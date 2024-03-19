@@ -66,7 +66,7 @@ const CreatePost = () => {
   return (
     <div>
       <Navbar />
-      <div className='px-6 md:px-[200px] mt-8'>
+      <div class="bg-[url('./images/bg10.jpg')] " >
         <h1 className='font-bold md:text-2xl text-xl'>Create a post</h1>
         <form className='w-full flex flex-col space-y-4 md:space-y-8 mt-4'>
           <input
@@ -109,7 +109,7 @@ const CreatePost = () => {
           <button
             type="submit"
             onClick={handleCreate}
-            className='bg-black w-full md:w-auto text-white font-semibold px-4 py-2'>
+            class="px-3 py-3 text-white bg-black rounded-md font-semibold w-50%">
             Upload Blog
           </button>
         </form>

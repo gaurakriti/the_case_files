@@ -58,9 +58,9 @@ const MyBlogs = () => {
           
         )):<h3 className="text-center font-bold mt-16">No posts available</h3>}
         </div>
-        <footer class="bg-black text-white text-center py-4">
+        <Footer class="bg-black text-white text-center py-4">
         <p>© 2024 The Case Study Blog</p>
-    </footer>
+    </Footer>
     </div>
   )
 }

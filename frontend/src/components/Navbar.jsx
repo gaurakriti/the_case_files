@@ -78,13 +78,9 @@ import { useContext, useState } from "react"
 import Menu from "./Menu"
 import { UserContext } from "../context/UserContext"
 import Logo from "../pages/Logo"
-import AllPosts from "./AllPosts";
+import AllPosts from "../pages/AllPosts";
 import Footer from "./Footer";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route
-// } from "react-router-dom";
+
 
 const Navbar = () => {
   
@@ -105,7 +101,7 @@ const Navbar = () => {
     
   return (
   
-    <div className="top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-[200px] h-16 bg-white">
+    <div className="top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-[200px] h-16 bg-black text-white">
 
     
     {/* <h1 className="text-lg md:text-xl font-extrabold"><Link to="/">221B</Link></h1> */}
@@ -115,10 +111,11 @@ const Navbar = () => {
 </Link>
 
         <ul class="hidden md:flex md:space-x-9 mx-8 px-30">
-           <li><a href = "#allposts">All posts</a></li>
+        <Link to="/allposts"> <li>All posts</li></Link>
             <li><a href="#">About</a></li>
             <li><a href="#foot">Contact</a></li>
         </ul>
+
         <div class="md:hidden">
             <i class="fa-solid fa-bars text-xl"></i>
         </div>

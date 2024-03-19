@@ -139,11 +139,18 @@ import { useContext, useEffect, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 import Loader from '../components/Loader'
 import { UserContext } from "../context/UserContext"
+import Typewriter from "./TypeWriter"
 import '../App.css'
  
 
 const Home = () => {
   
+  const words = [
+    "THE GAME IS ON.",
+    "Alone is what I have, alone protects me...",
+    "I'm not a PSYCHOPATH, I'm a high-functioning SOCIOPATH. Do your research",
+  ];
+
   const {search}=useLocation()
   // console.log(search)
   const [posts,setPosts]=useState([])
@@ -195,22 +202,28 @@ const Home = () => {
             </p>
           </div>
           
-             <button class="bg-white text-black border rounded border-black font-extrabold px-3 py-2">
-                <a href="signUp.html">Start a blog</a></button>
+            
+             {user && <a href="/write"> <button class="bg-black text-white border rounded border-black font-extrabold px-3 py-2">Start Writing</button></a>}
              
             </div>
 
+               
 
-
-
-
-
-<main class="container mx-auto my-12">
-
+            <div className="w-full h-[200px] flex justify-center items-center">
+        {/* Use the Typewriter component here */}
+        <Typewriter words={words} />
+      </div>
+      <div className="p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-800">
+          Embark on a journey through the enigmatic world of Sherlock Holmes. Dive into the depths of mystery and intrigue with our curated collection of blogs, uncovering the untold tales and unraveling the secrets behind the legendary detective. Join us as we explore the mind of Sherlock Holmes, where every clue is a puzzle waiting to be solved. Let the adventure begin.
+        </p>
+      </div>
+            <main class="container mx-auto my-12">
+        
         <section class="text-center mb-12">
         <div class="mx-5 my-9 space-x-4">
-              <a href="edit.html"/> <a href="edit.html"> <button class="bg-black text-white border rounded border-black font-extrabold px-3 py-2">Start Writing</button></a>
-                <a href="signUp.html"><button class="bg-white text-black border rounded border-black font-extrabold px-3 py-2">Sign Up Now</button></a>
+              
+                {!user && <a href="/register"><button class="bg-white text-black border rounded border-black font-extrabold px-3 py-2">Sign Up Now</button></a>}
              </div>
              <figure>
                 <img src="./images/filter.jpg"   class="my-[100px] m-auto hover:filter-none filter grayscale object-contain"/>
@@ -226,16 +239,7 @@ const Home = () => {
 
     
     <div className="flex justify-center items-center mt-4">
-    <input 
-        onChange={(e) => setPrompt(e.target.value)} 
-        className="outline-none px-3 py-2 rounded-l-lg border border-r-0" 
-        placeholder="Search a post" 
-        type="text"
-    />
-    <p onClick={() => navigate(prompt ? "?search=" + prompt : navigate("/"))} 
-       className="cursor-pointer bg-blue-500 hover:bg-red-600 text-white px-4 py-2 rounded-r-lg border border-l-0 flex items-center justify-center">
-        <BsSearch/>
-    </p>
+    <h1 class="text-center text-6xl mb-7 text-gray-600"> Trending Blogs </h1>
 </div>
       
         {loader?<div className="h-[40vh] flex justify-center items-center"><Loader/></div>:!noResults?
