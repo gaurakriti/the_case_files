@@ -238,21 +238,22 @@ const Home = () => {
     </main>
 
     
-    <div className="flex justify-center items-center mt-4">
+
     <h1 class="text-center text-6xl mb-7 text-gray-600"> Trending Blogs </h1>
 </div>
-      
+      <main class="p-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         {loader?<div className="h-[40vh] flex justify-center items-center"><Loader/></div>:!noResults?
         posts.map((post)=>(
-          <>
+       
+          <div key={post._id} className=" mb-4">
           <Link to={user?`/posts/post/${post._id}`:"/login"}>
           <HomePosts key={post._id} post={post}/>
           </Link>
-          </>
-          
+          </div>
+        
         )):<h3 className="text-center font-bold mt-16">No posts available</h3>}
-    </div>
-
+  
+</main>
     
     <Footer/>
     </>

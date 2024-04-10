@@ -22,6 +22,7 @@ const verifyToken = require('../verifyToken')
 //         res.status(500).json(err)
 //     }
 // })
+
 router.put("/:id", verifyToken, async (req, res) => {
     console.log("Request Body:", req.body); // Debug to see the incoming request body
     try {
