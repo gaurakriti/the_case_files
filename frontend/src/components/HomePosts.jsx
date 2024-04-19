@@ -1,10 +1,15 @@
+
+// import { useState } from 'react';
+// import axios from 'axios';
 // import { IF } from '../url';
 
 // const HomePosts = ({ post }) => {
+ 
+
 //   return (
-//     <main className="p-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+       
 //       <article className="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-//         <img src={IF + post.photo} alt="" className="w-full h-64 object-cover rounded-t-lg" />
+//         <img src={IF + post.photo} alt="" class="w-full h-64 object-cover rounded-t-lg" />
 //         <div className="flex flex-col p-4">
 //           <h1 className="text-2xl font-bold mb-2">
 //             {post.title}
@@ -16,14 +21,17 @@
 //               <p>{new Date(post.updatedAt).toString().slice(16,24)}</p>
 //             </div>
 //           </div>
-//           <p className="text-sm md:text-lg">{post.desc.slice(0,200) + " ...Read more"}</p>
+//           <p class ="text-gray-700">{post.desc.slice(0,200) + " ...Read more"}</p>
+         
 //         </div>
 //       </article>
-//     </main>
+  
 //   );
 // };
 
 // export default HomePosts;
+
+
 
 import { useState } from 'react';
 import axios from 'axios';
@@ -33,9 +41,9 @@ const HomePosts = ({ post }) => {
  
 
   return (
-    
+       
       <article className="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-        <img src={IF + post.photo} alt="" className="w-full h-64 object-cover rounded-t-lg" />
+        <img src={IF + post.photo} alt="" class="w-full h-64 object-cover rounded-t-lg" />
         <div className="flex flex-col p-4">
           <h1 className="text-2xl font-bold mb-2">
             {post.title}
@@ -47,7 +55,7 @@ const HomePosts = ({ post }) => {
               <p>{new Date(post.updatedAt).toString().slice(16,24)}</p>
             </div>
           </div>
-          <p className="text-sm md:text-lg">{post.desc.slice(0,200) + " ...Read more"}</p>
+          <p class ="text-gray-700">{post.desc.slice(0,200) + " ...Read more"}</p>
          
         </div>
       </article>
@@ -56,6 +64,8 @@ const HomePosts = ({ post }) => {
 };
 
 export default HomePosts;
+
+
 
 
 

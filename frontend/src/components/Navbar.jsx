@@ -1,3 +1,6 @@
+
+
+
 // import { Link, useLocation, useNavigate } from "react-router-dom"
 // import {BsSearch} from 'react-icons/bs'
 // import {FaBars} from 'react-icons/fa'
@@ -5,8 +8,9 @@
 // import Menu from "./Menu"
 // import { UserContext } from "../context/UserContext"
 // import Logo from "../pages/Logo"
-// import AllPosts from "./AllPosts";
+// import AllPosts from "../pages/AllPosts";
 // import Footer from "./Footer";
+
 
 // const Navbar = () => {
   
@@ -27,7 +31,7 @@
     
 //   return (
   
-//     <div className="top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-[200px] h-16 bg-white">
+//     <div className="top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-[200px] h-16 bg-black text-white">
 
     
 //     {/* <h1 className="text-lg md:text-xl font-extrabold"><Link to="/">221B</Link></h1> */}
@@ -37,10 +41,11 @@
 // </Link>
 
 //         <ul class="hidden md:flex md:space-x-9 mx-8 px-30">
-//            <li><a href = "#allposts">All posts</a></li>
+//         <Link to="/allposts"> <li>All posts</li></Link>
 //             <li><a href="#">About</a></li>
 //             <li><a href="#foot">Contact</a></li>
 //         </ul>
+
 //         <div class="md:hidden">
 //             <i class="fa-solid fa-bars text-xl"></i>
 //         </div>
@@ -69,6 +74,8 @@
 // }
 
 // export default Navbar 
+
+
 
 
 import { Link, useLocation, useNavigate } from "react-router-dom"
@@ -105,19 +112,19 @@ const Navbar = () => {
 
     
     {/* <h1 className="text-lg md:text-xl font-extrabold"><Link to="/">221B</Link></h1> */}
-    <nav class="bg-light text-brown flex justify-between items-center p-4 ">
+    <nav className="bg-light text-brown flex justify-between items-center p-4 ">
     <Link to="/" >
   <Logo/>
 </Link>
 
-        <ul class="hidden md:flex md:space-x-9 mx-8 px-30">
+        <ul className="hidden md:flex md:space-x-9 mx-8 px-30">
         <Link to="/allposts"> <li>All posts</li></Link>
             <li><a href="#">About</a></li>
             <li><a href="#foot">Contact</a></li>
         </ul>
 
-        <div class="md:hidden">
-            <i class="fa-solid fa-bars text-xl"></i>
+        <div className="md:hidden">
+            <i className="fa-solid fa-bars text-xl"></i>
         </div>
     </nav>
     {path==="/" && <div className="flex justify-center items-center space-x-0">

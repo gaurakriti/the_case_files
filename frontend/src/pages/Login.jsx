@@ -1,42 +1,44 @@
+
+
 import { Link, useNavigate } from "react-router-dom"
 import Footer from "../components/Footer"
 import { useContext, useState } from "react"
 import axios from "axios"
 import { URL } from "../url"
 import { UserContext } from "../context/UserContext"
+import { ThemeProvider, ThemeContext } from '../context/ThemeContext';
 import "../App.css"
 
 const Login = () => {
-    const [email,setEmail]=useState("")
-    const [password,setPassword]=useState("")
-    const [error,setError]=useState(false)
-    const {setUser}=useContext(UserContext)
-    const navigate=useNavigate()
-  
-    const handleLogin=async()=>{
-      try{
-        const res=await axios.post(URL+"/api/auth/login",{email,password},{withCredentials:true})
-        // console.log(res.data)
-        setUser(res.data)
-        setEmail("");
-        setPassword("");
-        navigate("/")
-  
-      }
-      catch(err){
-        setError(true)
-        console.log(err)
-  
-      }
-  
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [error, setError] = useState(false)
+    const { setUser } = useContext(UserContext)
+    const navigate = useNavigate()
+    const { theme } = useContext(ThemeContext);
+
+    const handleLogin = async () => {
+        try {
+            const res = await axios.post(URL + "/api/auth/login", { email, password }, { withCredentials: true })
+            setUser(res.data)
+            setEmail("");
+            setPassword("");
+            navigate("/")
+
+        } catch (err) {
+            setError(true)
+            console.log(err)
+        }
     }
 
     return (
-        <>
+        <ThemeProvider>
+        <div className={`theme-${theme}`}>
             {/* Navbar */}
-            <nav className="bg-black shadow-md" id = "login">
+            
+            <nav className="bg-black shadow-md" id="login">
                 <div className="container mx-auto flex justify-between items-center py-4">
-                <Link to="/"> <h1 className="text-2xl font-bold text-white">THE CASE FILES.com</h1></Link>
+                    <Link to="/"> <h1 className="text-2xl font-bold text-white">THE CASE FILES.com</h1></Link>
                     <div>
                         <ul className="flex space-x-4">
                             <li><Link to="/" className="text-white">Home</Link></li>
@@ -59,18 +61,18 @@ const Login = () => {
                             <input type="password" placeholder="Password" className="input-field" value={password} onChange={(e) => setPassword(e.target.value)} />
                         </div>
                         <div className="mt-6">
-                        <button onClick={handleLogin} className="w-full px-4 py-4 text-lg font-bold text-white bg-black rounded-lg hover:bg-gray-500 hover:text-black ">Log in</button>
-                        {error && <h3 className="text-red-500 text-sm ">Something went wrong</h3>}
+                            <button onClick={handleLogin} className="w-full px-4 py-4 text-lg font-bold text-white bg-black rounded-lg hover:bg-gray-500 hover:text-black ">Log in</button>
+                            {error && <h3 className="text-red-500 text-sm ">Something went wrong</h3>}
                         </div>
                         <p>
-                   Don't have an account? <Link to="/register">Register</Link>
-                       </p>
+                            Don't have an account? <Link to="/register">Register</Link>
+                        </p>
                     </div>
                 </div>
             </div>
-<Footer/>
-
-        </>
+            <Footer />
+        </div>
+        </ThemeProvider>
     );
 };
 

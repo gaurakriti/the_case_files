@@ -185,6 +185,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { ThemeProvider, ThemeContext } from '../context/ThemeContext';
 import { BsSearch } from 'react-icons/bs';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -201,6 +202,7 @@ const AllPosts = () => {
   const [loader, setLoader] = useState(false);
   const { user } = useContext(UserContext);
   const [prompt, setPrompt] = useState("");
+  const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
 
   const fetchPosts = async () => {
@@ -221,6 +223,8 @@ const AllPosts = () => {
   }, [location.search]);
 
   return (
+    <ThemeProvider>
+    <div className={`theme-${theme}`}>
     <div>
       <Navbar/>
       <div className="flex justify-center items-center space-x-0">
@@ -229,6 +233,10 @@ const AllPosts = () => {
           <BsSearch/>
         </p>
       </div>
+      <header class="header-container m-10">
+            <h1 class="header-title m-2 text-5xl  font-bold text-center"> Sherlock Holmes Blogs</h1>
+           
+        </header>
       <div className="px-8 md:px-[200px] min-h-[80vh]">
       <main class="p-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         {loader ? (
@@ -248,6 +256,8 @@ const AllPosts = () => {
       </div>
       <Footer/>
     </div>
+    </div>
+    </ThemeProvider>
   );
 };
 

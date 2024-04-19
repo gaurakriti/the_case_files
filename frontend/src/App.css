@@ -202,3 +202,46 @@ body > div {
   /* Adjust padding as needed */
   padding: 20px;
 }
+
+/* Default theme */
+.theme-default {
+  /* Default background color */
+  background-color: #fff7f7; /* Example background color */
+}
+
+/* Light theme */
+.theme-light {
+  /* Light theme background color */
+  background-color: #e96565; /* Example background color */
+}
+
+/* Dark theme */
+.theme-dark {
+  /* Dark theme background color */
+  background-color: #333333; /* Example background color */
+}
+
+/* Blue theme */
+.theme-blue {
+  /* Blue theme background color */
+  background-color: #3498db; /* Example background color */
+}
+
+
+/* Inside your CSS file (e.g., App.css) */
+
+/* Style for the switch theme button */
+.theme-switcher-button {
+  background-color: #4caf50; /* Green */
+  color: #fff; /* White text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.theme-switcher-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

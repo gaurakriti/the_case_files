@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
+import { ThemeProvider,ThemeContext } from '../context/ThemeContext';
 import { URL } from '../url';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -15,6 +16,8 @@ const CreatePost = () => {
   const { user } = useContext(UserContext);
   const [cat, setCat] = useState("");
   const [cats, setCats] = useState([]);
+  const {theme} = useContext(ThemeContext)
+  console.log(file);
   const navigate = useNavigate();
 
   // Example predefined categories
@@ -64,9 +67,12 @@ const CreatePost = () => {
   };
 
   return (
+    <ThemeProvider>
+    
     <div>
       <Navbar />
-      <div class="bg-[url('./images/bg10.jpg')] " >
+      <div className="bg-[url('./images/bg10.jpg')] " >
+      <div className={`theme-${theme}`}>
         <h1 className='font-bold md:text-2xl text-xl'>Create a post</h1>
         <form className='w-full flex flex-col space-y-4 md:space-y-8 mt-4'>
           <input
@@ -109,13 +115,15 @@ const CreatePost = () => {
           <button
             type="submit"
             onClick={handleCreate}
-            class="px-3 py-3 text-white bg-black rounded-md font-semibold w-50%">
+            className="px-3 py-3 text-white bg-black rounded-md font-semibold w-50%">
             Upload Blog
           </button>
         </form>
       </div>
       <Footer />
     </div>
+    </div>
+    </ThemeProvider>
   );
 };
 
