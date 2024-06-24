@@ -185,7 +185,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { ThemeProvider, ThemeContext } from '../context/ThemeContext';
+
 import { BsSearch } from 'react-icons/bs';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -202,7 +202,7 @@ const AllPosts = () => {
   const [loader, setLoader] = useState(false);
   const { user } = useContext(UserContext);
   const [prompt, setPrompt] = useState("");
-  const { theme } = useContext(ThemeContext);
+
   const navigate = useNavigate();
 
   const fetchPosts = async () => {
@@ -223,8 +223,8 @@ const AllPosts = () => {
   }, [location.search]);
 
   return (
-    <ThemeProvider>
-    <div className={`theme-${theme}`}>
+    
+    
     <div>
       <Navbar/>
       <div className="flex justify-center items-center space-x-0">
@@ -256,8 +256,8 @@ const AllPosts = () => {
       </div>
       <Footer/>
     </div>
-    </div>
-    </ThemeProvider>
+
+    
   );
 };
 

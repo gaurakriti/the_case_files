@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect, useContext } from 'react';
 import { UserContext } from "../context/UserContext"
-import { ThemeProvider, ThemeContext ,ThemeSwitcher} from '../context/ThemeContext';
+
 import axios from 'axios';
 import Footer from '../components/Footer';
 import HomePosts from '../components/HomePosts';
@@ -29,7 +29,7 @@ const Home = () => {
   const [noResults, setNoResults] = useState(false);
   const [loader, setLoader] = useState(false);
   const { user } = useContext(UserContext);
-  const { theme } = useContext(ThemeContext);
+ 
   const navigate = useNavigate();
 
   const fetchPosts = async () => {
@@ -52,12 +52,11 @@ const Home = () => {
  
 
   return (
-    <ThemeProvider>
-    <div className={`theme-${theme}`}>
+   <>
+   
     
       <Navbar />
       
-       
         <div>
           <div className="bg-[rgb(16,21,23)] text-center h-[400px] relative py-16 ">
             <h1 className="text-white ">Unlock The Mysteries</h1>
@@ -105,9 +104,9 @@ const Home = () => {
   
  </main>
 
-      </div>
+   
       <Footer />
-    </ThemeProvider>
+  </>
   );
 }
 

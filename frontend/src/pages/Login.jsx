@@ -6,7 +6,7 @@ import { useContext, useState } from "react"
 import axios from "axios"
 import { URL } from "../url"
 import { UserContext } from "../context/UserContext"
-import { ThemeProvider, ThemeContext } from '../context/ThemeContext';
+
 import "../App.css"
 
 const Login = () => {
@@ -15,7 +15,7 @@ const Login = () => {
     const [error, setError] = useState(false)
     const { setUser } = useContext(UserContext)
     const navigate = useNavigate()
-    const { theme } = useContext(ThemeContext);
+ 
 
     const handleLogin = async () => {
         try {
@@ -32,8 +32,8 @@ const Login = () => {
     }
 
     return (
-        <ThemeProvider>
-        <div className={`theme-${theme}`}>
+        
+        <>
             {/* Navbar */}
             
             <nav className="bg-black shadow-md" id="login">
@@ -71,8 +71,8 @@ const Login = () => {
                 </div>
             </div>
             <Footer />
-        </div>
-        </ThemeProvider>
+        </>
+        
     );
 };
 

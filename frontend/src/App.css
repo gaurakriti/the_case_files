@@ -245,3 +245,47 @@ body > div {
 .theme-switcher-button:hover {
   background-color: #45a049; /* Darker green on hover */
 }
+
+/* App.css */
+.footer {
+  background-color: #101517;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer .socialMediaSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+.footer .socialMediaSection h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.footer .socialMediaSection a {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.footer .socialMediaSection a:hover {
+  color: var(--hover-color); /* Define hover colors in your CSS variables */
+}
+
+.footer .title {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .footer .title {
+    font-size: 9rem;
+  }
+}

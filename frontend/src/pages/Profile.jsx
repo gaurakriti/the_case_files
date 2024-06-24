@@ -6,7 +6,7 @@ import axios from "axios"
 import { IF, URL } from "../url"
 import { UserContext } from "../context/UserContext"
 import { useNavigate, useParams } from "react-router-dom"
-import { ThemeProvider, ThemeContext } from '../context/ThemeContext';
+
 import "../App.css"
 
 const Profile = () => {
@@ -18,7 +18,7 @@ const Profile = () => {
   const navigate=useNavigate()
   const [posts,setPosts]=useState([])
   const [updated,setUpdated]=useState(false)
-  const { theme } = useContext(ThemeContext);
+ 
   // console.log(user)
 
 const fetchProfile=async ()=>{
@@ -85,8 +85,8 @@ useEffect(()=>{
 },[param])
 
   return (
-    <ThemeProvider>
-    <div className={`theme-${theme}`}>
+    
+    
     <div>
       <Navbar/>
       <div className="min-h-[80vh] px-8 md:px-[200px] mt-8 flex md:flex-row flex-col-reverse md:items-start items-start">
@@ -113,8 +113,7 @@ useEffect(()=>{
       </div>
       <Footer/>
     </div>
-    </div>
-    </ThemeProvider>
+   
   )
 }
 

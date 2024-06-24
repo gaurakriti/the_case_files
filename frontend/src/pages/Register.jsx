@@ -4,7 +4,7 @@ import { useState , useContext} from "react"
  import axios from 'axios'
  import {URL} from '../url'
 import Footer from "../components/Footer"
-import { ThemeProvider, ThemeContext } from '../context/ThemeContext';
+
 import "../App.css"
 const Register = () => {
 
@@ -12,7 +12,7 @@ const Register = () => {
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
   const [error,setError]=useState(false)
-  const { theme } = useContext(ThemeContext);
+  
   const navigate=useNavigate()
   
   const handleRegister=async ()=>{
@@ -41,10 +41,10 @@ const Register = () => {
   
 
   return (
-    <ThemeProvider>
+  
      
     <div className="bg-gray-100">
-    <div className={`theme-${theme}`}>
+   
       {/* Navbar */}
       <nav className="bg-black text-white p-4">
        
@@ -94,9 +94,8 @@ const Register = () => {
 
       {/* Footer */}
       <Footer/>
-      </div>
-    </div>
-    </ThemeProvider>
+          </div>
+    
   );
 }
 

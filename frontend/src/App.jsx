@@ -88,15 +88,14 @@ import CreatePost from './pages/CreatePost'
 import EditPost from './pages/EditPost'
 import Profile from './pages/Profile'
 import {  UserContextProvider } from './context/UserContext'
-import { ThemeProvider } from './context/ThemeContext'
-import {ThemeProviderAndSwitcher} from './context/ThemeContext';
+
 import MyBlogs from './pages/MyBlogs'
 
 
 const App = () => {
   return (
       <UserContextProvider>
-      <ThemeProviderAndSwitcher>
+      
       <Routes>
       <Route exact path="/" element={<Home/>}/>
       <Route exact path ="/allposts" element={<AllPosts/>}/>
@@ -109,7 +108,7 @@ const App = () => {
       <Route exact path="/myblogs/:id" element={<MyBlogs/>}/>
       <Route exact path="/profile/:id" element={<Profile/>}/>
       </Routes>
-   </ThemeProviderAndSwitcher>
+  
       </UserContextProvider>
   )
 }

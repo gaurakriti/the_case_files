@@ -43,7 +43,9 @@ const HomePosts = ({ post }) => {
   return (
        
       <article className="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-        <img src={IF + post.photo} alt="" class="w-full h-64 object-cover rounded-t-lg" />
+  
+
+        <img src={post.photo} alt="" class="w-full h-64 object-cover rounded-t-lg" />
         <div className="flex flex-col p-4">
           <h1 className="text-2xl font-bold mb-2">
             {post.title}

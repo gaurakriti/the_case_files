@@ -114,7 +114,7 @@ const Navbar = () => {
     {/* <h1 className="text-lg md:text-xl font-extrabold"><Link to="/">221B</Link></h1> */}
     <nav className="bg-light text-brown flex justify-between items-center p-4 ">
     <Link to="/" >
-  <Logo/>
+  <div className="text-gold-900 font-bold">THE CASE FILES</div>
 </Link>
 
         <ul className="hidden md:flex md:space-x-9 mx-8 px-30">

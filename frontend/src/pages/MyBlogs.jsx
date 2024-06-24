@@ -3,7 +3,7 @@ import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../context/UserContext"
-import { ThemeProvider,ThemeContext } from "../context/ThemeContext"
+
 import axios from "axios"
 import { URL } from "../url"
 import HomePosts from "../components/HomePosts"
@@ -17,7 +17,7 @@ const MyBlogs = () => {
   const [noResults,setNoResults]=useState(false)
   const [loader,setLoader]=useState(false)
   const {user}=useContext(UserContext)
-  const {theme}= useContext(ThemeContext)
+ 
   // console.log(user)
 
   const fetchPosts=async()=>{
@@ -47,8 +47,8 @@ const MyBlogs = () => {
   },[search])
 
   return (
-    <ThemeProvider>
-    <div className={`theme-${theme}`}>
+    
+    
     <div>
         <Navbar/>
         <div className="px-8 md:px-[200px] min-h-[80vh]">
@@ -59,13 +59,12 @@ const MyBlogs = () => {
           <HomePosts key={post._id} post={post}/>
           </Link>
           </>
-          
         )):<h3 className="text-center font-bold mt-16">No posts available</h3>}
         </div>
         <Footer/>
     </div>
-    </div>
-    </ThemeProvider>
+
+
   )
 }
 

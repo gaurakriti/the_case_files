@@ -1,39 +1,23 @@
-// import React from "react"
-
-// const Footer = () => {
-//   return (
-//     <div class="bg-[#101517] h-[200px] flex items-center my-16"  >
-//     <div class="h-[20px] flex space-x-4  ">
-//         <h3 class=" ">FOLLOW</h3>
-//         <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
-//         <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
-//         <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
-//     </div>
-    
-// <h1 class="  text-white lg:text-9xl px-3 pb-8 text-5xl xl:mx-auto">THE CASE FILES</h1>
-// </div>
-    
-//   )
-// }
-
-// export default Footer
-
 import React from "react";
-import "../App.css"; // Assuming you have a CSS file for styles
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
+import "../App.css"
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+
 const Footer = () => {
   return (
-    <footer className="footer" id="foot">
-      <div className="socialMediaSection">
-        <h3>FOLLOW</h3>
-        <i><FaFacebook/></i>
-        <i><FaTwitter/></i>
-        <i><FaInstagram/></i>
+    <footer className="bg-[#101517] py-16 flex flex-col items-center space-y-8">
+      <div className="flex space-x-4 items-center text-white">
+        <h3 className="text-lg font-semibold">FOLLOW</h3>
+        <a href="https://facebook.com" aria-label="Facebook" className="hover:text-blue-500 transition-colors duration-300">
+          <FaFacebook size={24} />
+        </a>
+        <a href="https://twitter.com" aria-label="Twitter" className="hover:text-blue-400 transition-colors duration-300">
+          <FaTwitter size={24} />
+        </a>
+        <a href="https://instagram.com" aria-label="Instagram" className="hover:text-pink-500 transition-colors duration-300">
+          <FaInstagram size={24} />
+        </a>
       </div>
-
-      <h1 className="title">THE CASE FILES</h1>
+      <h1 className="text-white text-5xl lg:text-9xl font-bold text-center">THE CASE FILES</h1>
     </footer>
   );
 };
