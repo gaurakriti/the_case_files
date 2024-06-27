@@ -16,6 +16,10 @@ const CommentSchema=new mongoose.Schema({
     userId:{
         type:String,
         required:true
+    },
+    flagged:{
+         type:Boolean,
+         default:false
     }
 },{timestamps:true})
 

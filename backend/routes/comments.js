@@ -5,11 +5,14 @@ const bcrypt=require('bcrypt')
 const Post=require('../models/Post')
 const Comment=require('../models/Comment')
 const verifyToken = require('../verifyToken')
+const Filter = require('bad-words');
 
+const filter = new Filter();
 //CREATE
 router.post("/create",verifyToken,async (req,res)=>{
     try{
         const newComment=new Comment(req.body)
+        newComment = filter.clean(newComment);
         const savedComment=await newComment.save()
         res.status(200).json(savedComment)
     }
@@ -22,9 +25,10 @@ router.post("/create",verifyToken,async (req,res)=>{
 //UPDATE
 router.put("/:id",verifyToken,async (req,res)=>{
     try{
-       
+        
         const updatedComment=await Comment.findByIdAndUpdate(req.params.id,{$set:req.body},{new:true})
-        res.status(200).json(updatedComment)
+        const updated = filter.clean(updatedComment)
+        res.status(200).json(updated)
 
     }
     catch(err){
@@ -58,6 +62,22 @@ router.get("/post/:postId",async (req,res)=>{
     catch(err){
         res.status(500).json(err)
     }
+})
+
+
+router.patch("/:id/flag" ,verifyToken, async(req,res) =>{
+       try{
+         const comment = await Comment.findById(req.params.id);
+         if(!comment) return res.status(400).send('Comment not found');
+
+         comment.flagged = true;
+         await comment.save();
+         res.send(comment)
+       }catch(err)
+       {
+        console.log(err);
+        res.status(500).send('Server error');
+       }
 })
 
 

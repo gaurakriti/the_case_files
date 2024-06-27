@@ -17,6 +17,17 @@ const Comment = ({c,post}) => {
       console.log(err)
     }
   }
+
+  // const handleFlag =  async(id) =>{
+  //     const token = localStorage.getItem('token');
+
+  //     try{
+  //        await axios.patch(`/api/comments/${id}/flag`,{},{
+  //         headers: {Authorization: token}
+  //        })
+
+  //     }
+  // }
   // console.log(post.userId)
   // console.log(user._id)
   // console.log(post)
