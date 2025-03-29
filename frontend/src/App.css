@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* footer {
+    background-color: rgb(69, 67, 67) !important;
+}
+#footer-logo h1 {
+    text-align: left;
+    color: beige;
+    font-size: 26px;
+    font-weight: bold;
+}
+#footer-logo p {
+    text-align: left;
+    color: beige;
+    font-size: 18px;
+    font-weight: 400;
+}
+#footer-li ul li{
+    width: auto;
+    position: relative;
+    display: inline-block;
+    text-align: right;
+    color: aliceblue;
+    list-style: disc;
+} */
+
+/* 
+.footer {
+  background-color: #101517;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  margin: 4rem 0;
+}
+
+.socialMediaSection {
+  height: 20px;
+  display: flex;
+  gap: 16px; /* space-x-4 equivalent */
+/* } */
+
+.socialMediaSection h3,
+.socialMediaSection i {
+  color: #ffffff;
+}
+
+
+  .socialMediaSection {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Center the icons vertically */
+  }
+  
+
+.title {
+  color: white;
+  font-size: 100px; /* text-5xl equivalent */
+  padding-left: 12px; /* px-3 equivalent */
+  padding-bottom: 32px; /* pb-8 equivalent */
+} */
+
+/* This styles are to ensure that the footer remains at the bottom */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root { /* Assuming you're using Create React App which renders inside a div with id="root" */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.footer {
+  margin-top: auto; /* This pushes the footer to the bottom */
+  background-color: #333; /* Example background color */
+  color: white; /* Example text color */
+  text-align: center;
+  padding: 5px 0; /* Example padding */
+}
+
+.socialMediaSection h3, .socialMediaSection i {
+  margin: 0 10px; /* Example margin */
+
+}
+
+/* Adding some styles for the icons to make them look better */
+.fa-facebook-f, .fa-twitter, .fa-instagram {
+  cursor: pointer;
+  margin: 0 5px;
+  font-size: 20px;
+   /* Example size, adjust as needed */
+}
+
+/* You might need to adjust this depending on your actual HTML structure */
+body > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+
+/* Define CSS variables for consistency and maintainability */
+:root {
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --color-primary: #102317; /* Dark greenish-black */
+    --color-secondary: #ffffff;
+    --color-accent: #4CAF50; /* Green for buttons */
+    --color-background: #f0f0f0;
+  }
+  
+ 
+  body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+    max-width: 2900vh;
+    width: 100%;
+  }
+  
+  .header {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .main-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-primary {
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+  }
+  
+  .button-primary:hover {
+    background-color: darken(var(--color-accent), 10%);
+  }
+  
+  .button-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+  }
+  
+  .button-secondary:hover {
+    background-color: lighten(var(--color-secondary), 5%);
+  }
+  
+  /* Responsive design adjustments */
+  @media (max-width: 768px) {
+    .main-container {
+      padding: 10px;
+    }
+  
+    .header h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  /* Full-width image styling */
+.full-width-image {
+    width:100%;
+    height:20% ;
+    margin-left: 25%;
+    display: block; /* Removes any default margin or padding */
+  }
+  
+  /* Ensure the container does not have padding or margin that might affect the full width */
+  .main-container, .header {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .app-container {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+
+
+.Navbar, #foot {
+  flex-shrink: 0; /* Prevent flex items from being smaller than their content */
+}
+
+.content {
+  flex-grow: 1; /* Allow the content area to grow and fill available space */
+  overflow-y: auto; /* Enable vertical scrolling */
+  /* Adjust padding as needed */
+  padding: 20px;
+}
+
+/* Default theme */
+.theme-default {
+  /* Default background color */
+  background-color: #fff7f7; /* Example background color */
+}
+
+/* Light theme */
+.theme-light {
+  /* Light theme background color */
+  background-color: #e96565; /* Example background color */
+}
+
+/* Dark theme */
+.theme-dark {
+  /* Dark theme background color */
+  background-color: #333333; /* Example background color */
+}
+
+/* Blue theme */
+.theme-blue {
+  /* Blue theme background color */
+  background-color: #3498db; /* Example background color */
+}
+
+
+/* Inside your CSS file (e.g., App.css) */
+
+/* Style for the switch theme button */
+.theme-switcher-button {
+  background-color: #4caf50; /* Green */
+  color: #fff; /* White text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.theme-switcher-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* App.css */
+.footer {
+  background-color: #101517;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer .socialMediaSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+.footer .socialMediaSection h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.footer .socialMediaSection a {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.footer .socialMediaSection a:hover {
+  color: var(--hover-color); /* Define hover colors in your CSS variables */
+}
+
+.footer .title {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .footer .title {
+    font-size: 9rem;
+  }
+}
